@@ -5,6 +5,8 @@ import TodoItem from './TodoItem'
 import FilterButtons from './FilterButtons'
 import TodoStats from './TodoStats'
 
+import logo from '../assets/logo.png'
+
 function TodoList({ items }) {
   const [tasks, setTasks] = useState([])
   const [activeFilter, setActiveFilter] = useState(null)
@@ -78,7 +80,10 @@ function TodoList({ items }) {
 
   return (
     <div className='container my-10'>
-      <h1 className='text-6xl my-4 text-cyan-900'>Le mie cose da fare</h1>
+      <h1 className='text-6xl my-4 text-cyan-900 flex items-center'>
+        <img src={logo} width='100' />
+        Le mie cose da fare
+      </h1>
       <div className='lg:flex lg:justify-between items-end'>
         <div className='my-4 lg:mt-auto lg:mb-0'>
           <FilterButtons filters={filters} onFilterClick={handleFilters} />
